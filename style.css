@@ -249,7 +249,7 @@ nav a:hover {
 .call-float {
     position: fixed;
     right: 35px;
-    bottom: 155px; /* WhatsApp பட்டனுக்கு மேலே வைக்கப்பட்டுள்ளது */
+    bottom: 160px; /* WhatsApp பட்டனுக்கு மேலே வைக்கப்பட்டுள்ளது */
     width: 60px;
     height: 60px;
     background: linear-gradient(135deg, #FFE259 0%, #FFA751 50%, #D4AF37 100%);
@@ -1341,6 +1341,7 @@ nav a:hover {
 
     .menu-btn {
         display: flex;
+        color:#d59b28;
     }
 
     nav {
@@ -1630,4 +1631,168 @@ nav a:hover {
 }
 .mt-5{
     margin-top: 50px;
+}
+
+/* =========================
+   FAQ ACCORDION & CTA
+========================= */
+.faq-section {
+    background: #fffffe;
+    color: black;
+    padding: 70px 0;
+}
+
+.faq-accordion-wrapper {
+    max-width: 860px;
+    margin: 0 auto 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.faq-card {
+    background: #16161a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-card:hover {
+    border-color: rgba(229, 184, 66, 0.4);
+}
+
+.faq-card.active {
+    border-color: var(--accent);
+    background: #1a1a20;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px 24px;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    cursor: pointer;
+    text-align: left;
+    color: #ffffff;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.faq-question span {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.faq-question span i {
+    color: var(--accent);
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+.faq-arrow {
+    font-size: 16px;
+    color: var(--accent);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.faq-card.active .faq-arrow {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+}
+
+.faq-card.active .faq-answer {
+    max-height: 300px;
+    transition: max-height 0.4s ease-in-out;
+}
+
+.faq-answer p {
+    padding: 0 24px 22px;
+    color: #b3b3b3;
+    font-size: 15px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* FAQ Final CTA Banner */
+.faq-cta-banner {
+    max-width: 860px;
+    margin: 40px auto 0;
+    background: linear-gradient(145deg, #18181f 0%, #111115 100%);
+    border: 1px solid rgba(229, 184, 66, 0.3);
+    border-radius: 20px;
+    padding: 45px 35px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.faq-cta-banner h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(24px, 4vw, 34px);
+    margin: 10px 0 12px;
+    color: #ffffff;
+}
+
+.faq-cta-banner p {
+    color: #a8a8a8;
+    max-width: 620px;
+    margin: 0 auto 25px;
+    font-size: 15px;
+}
+
+.faq-cta-btns {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.faq-wa-btn {
+    background: #25d366;
+    color: #ffffff;
+    border-color: #25d366;
+}
+
+.faq-wa-btn:hover {
+    background: #1faa54;
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 70px 0;
+    }
+
+    .faq-question {
+        padding: 16px 18px;
+        font-size: 14px;
+    }
+
+    .faq-answer p {
+        padding: 0 18px 18px;
+        font-size: 13.5px;
+    }
+
+    .faq-cta-banner {
+        padding: 30px 20px;
+    }
+
+    .faq-cta-btns .btn {
+        width: 100%;
+    }
 }

@@ -181,3 +181,25 @@ window.closeLightbox = function (event) {
         }
     }
 };
+
+
+/* =========================================
+   FAQ ACCORDION TOGGLE
+========================================= */
+const faqCards = document.querySelectorAll(".faq-card");
+
+faqCards.forEach(card => {
+    const questionBtn = card.querySelector(".faq-question");
+
+    questionBtn.addEventListener("click", () => {
+        const isActive = card.classList.contains("active");
+
+        // Close all other open accordions
+        faqCards.forEach(item => item.classList.remove("active"));
+
+        // Toggle current accordion
+        if (!isActive) {
+            card.classList.add("active");
+        }
+    });
+});
