@@ -1487,7 +1487,7 @@ nav a:hover {
 }
 
 .tab-btn {
-    background: rgba(174, 129, 40, 0.667);
+    background: black;
     border: 1px solid rgba(255, 255, 255, 0.15);
     color: #ffffff;
     padding: 12px 28px;
@@ -1643,7 +1643,7 @@ nav a:hover {
 }
 
 .faq-accordion-wrapper {
-    max-width: 860px;
+    max-width: 80%;
     margin: 0 auto 50px;
     display: flex;
     flex-direction: column;
@@ -1723,7 +1723,7 @@ nav a:hover {
 .faq-answer p {
     padding: 0 24px 22px;
     color: #b3b3b3;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 1.7;
     margin: 0;
 }
@@ -1779,7 +1779,7 @@ nav a:hover {
     }
 
     .faq-question {
-        padding: 16px 18px;
+        padding: 19px 18px;
         font-size: 14px;
     }
 
