@@ -1485,6 +1485,208 @@ nav a:hover {
     gap: 15px;
     margin-bottom: 40px;
 }
+/* =========================
+   CLEAN SERVICES GRID
+========================= */
+.services-section {
+    background: #0f0f12;
+    color: #ffffff;
+    padding: 90px 0;
+}
+
+.text-center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-solution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 45px;
+}
+
+.service-item-card {
+    background: #17171d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 30px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(229, 184, 66, 0.45);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.service-icon-box {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 12px;
+    background: rgba(229, 184, 66, 0.1);
+    border: 1px solid rgba(229, 184, 66, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.service-icon-box i {
+    font-size: 24px;
+    color: var(--accent, #e5b842);
+}
+
+.service-item-card:hover .service-icon-box {
+    background: var(--accent, #e5b842);
+}
+
+.service-item-card:hover .service-icon-box i {
+    color: #0d0d0f;
+}
+
+.service-item-card h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+    .services-solution-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .services-section {
+        padding: 60px 0;
+    }
+
+    .services-solution-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .service-item-card {
+        padding: 20px 18px;
+    }
+
+    .service-item-card h3 {
+        font-size: 15px;
+    }
+}
+.text-light{
+    color:#ffffff !important;
+}
+
+
+/* =========================
+   EVENTS COVERED SECTION
+========================= */
+.events-covered-section {
+    background: #0b0b0d;
+    color: #ffffff;
+    padding: 90px 0;
+}
+
+.events-coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 45px;
+}
+
+.event-coverage-card {
+    background: #141418;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 26px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-coverage-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(229, 184, 66, 0.45);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+.event-icon-box {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 12px;
+    background: rgba(229, 184, 66, 0.1);
+    border: 1px solid rgba(229, 184, 66, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.event-icon-box i {
+    font-size: 22px;
+    color: var(--accent, #e5b842);
+    transition: color 0.3s ease;
+}
+
+.event-coverage-card:hover .event-icon-box {
+    background: var(--accent, #e5b842);
+}
+
+.event-coverage-card:hover .event-icon-box i {
+    color: #0b0b0d;
+}
+
+.event-coverage-card h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Tablet (2 per row) */
+@media (max-width: 992px) {
+    .events-coverage-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+}
+
+/* Mobile (1 per row) */
+@media (max-width: 600px) {
+    .events-covered-section {
+        padding: 60px 0;
+    }
+
+    .events-coverage-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .event-coverage-card {
+        padding: 18px 16px;
+    }
+
+    .event-coverage-card h3 {
+        font-size: 14.5px;
+    }
+}
 
 .tab-btn {
     background: black;
