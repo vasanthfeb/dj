@@ -1687,7 +1687,154 @@ nav a:hover {
         font-size: 14.5px;
     }
 }
+/* =========================
+   SERVICES SOLUTIONS EXPANDABLE CARDS
+========================= */
+.services-section {
+    background: #0f0f12;
+    color: #ffffff;
+    padding: 90px 0;
+}
 
+.text-center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.services-solution-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 45px;
+}
+
+.service-item-card {
+    background: #17171d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all 0.35s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-icon-box {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    background: rgba(229, 184, 66, 0.1);
+    border: 1px solid rgba(229, 184, 66, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    transition: all 0.35s ease;
+}
+
+.service-icon-box i {
+    font-size: 22px;
+    color: var(--accent, #e5b842);
+    transition: color 0.35s ease;
+}
+
+.service-item-card h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+/* Hidden Description Details */
+.service-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+}
+
+.service-details p {
+    margin: 0;
+    color: #a8a8af;
+    font-size: 13.5px;
+    line-height: 1.5;
+}
+
+/* Desktop Hover State */
+@media (hover: hover) {
+    .service-item-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(229, 184, 66, 0.45);
+        box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5);
+        background: #1c1c23;
+    }
+
+    .service-item-card:hover .service-icon-box {
+        background: var(--accent, #e5b842);
+    }
+
+    .service-item-card:hover .service-icon-box i {
+        color: #0d0d0f;
+    }
+
+    .service-item-card:hover .service-details {
+        max-height: 80px;
+        opacity: 1;
+        margin-top: 12px;
+    }
+}
+
+/* Mobile Click / Active State */
+.service-item-card.is-active {
+    border-color: var(--accent, #e5b842);
+    background: #1c1c23;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+}
+
+.service-item-card.is-active .service-icon-box {
+    background: var(--accent, #e5b842);
+}
+
+.service-item-card.is-active .service-icon-box i {
+    color: #0d0d0f;
+}
+
+.service-item-card.is-active .service-details {
+    max-height: 80px;
+    opacity: 1;
+    margin-top: 12px;
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+    .services-solution-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .services-section {
+        padding: 60px 0;
+    }
+
+    .services-solution-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .service-item-card {
+        padding: 18px 20px;
+    }
+}
 .tab-btn {
     background: black;
     border: 1px solid rgba(255, 255, 255, 0.15);
