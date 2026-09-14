@@ -3,8 +3,8 @@
 ========================= */
 :root {
     --primary: #111111;
-    --accent: #d59b28;
-    --accent-dark: #d59b28;
+    --accent: #E09F1A;
+    --accent-dark: #E09F1A;
     --background: #f8f8f5;
     --white: #ffffff;
     --text: #1c1c1c;
@@ -238,10 +238,94 @@ nav a:hover {
 
 .hero h1 {
     font-family: "Montserrat", sans-serif;
-    font-size: clamp(45px, 7vw, 82px);
-    line-height: 0.98;
+    /* font-size: clamp(45px, 7vw, 82px); */
+    font-size: 50px;
+    line-height: 1.28;
     max-width: 800px;
     margin-bottom: 30px;
+}
+
+
+/* =========================================
+   CUSTOMER VIDEO CARD (ORIGINAL / NO ROTATE)
+========================================= */
+.customer-video-card {
+    position: relative;
+    width: 100%;
+    height: 480px;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #000000;
+    border: 2px solid rgba(229, 184, 66, 0.25);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Video: Original Orientation & Aspect Ratio */
+.customer-video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* முழு கார்டையும் நிரப்ப cover; வெட்டப்படாமல் முழு வீடியோ தெரிய வேண்டும் என்றால் contain வைக்கலாம் */
+    display: block;
+}
+
+/* Play Icon Overlay */
+.customer-video-card .video-play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 2;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.customer-video-card .video-play-overlay i {
+    font-size: 65px;
+    color: var(--gold-primary, #FFD036);
+    filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.7));
+    transition: transform 0.3s ease;
+}
+
+.customer-video-card:hover .video-play-overlay i {
+    transform: scale(1.12);
+}
+
+/* Video Play ஆகும்போது Overlay மறைய */
+.customer-video-card.playing .video-play-overlay {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Customer Badge */
+.customer-video-card .customer-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 3;
+    transition: opacity 0.3s ease;
+}
+
+.customer-video-card.playing .customer-badge {
+    opacity: 0.3;
+}
+.ggg{
+    padding: 0px 40px;
+}
+/* Responsive */
+@media (max-width: 768px) {
+    .customer-video-card {
+        height: 340px;
+    }
+
+    .customer-video-card .video-play-overlay i {
+        font-size: 50px;
+    }
 }
 /* =========================
    FLOATING CALL BUTTON
@@ -1341,7 +1425,7 @@ nav a:hover {
 
     .menu-btn {
         display: flex;
-        color:#d59b28;
+        color:#E09F1A;
     }
 
     nav {

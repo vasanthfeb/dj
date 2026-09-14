@@ -203,3 +203,47 @@ faqCards.forEach(card => {
         }
     });
 });
+
+
+/* =========================================
+   CUSTOMER VIDEO CLICK TO PLAY (FIXED)
+========================================= */
+const custCard = document.getElementById('customerVideoCard');
+const custVideo = document.getElementById('customerVideo');
+
+if (custCard && custVideo) {
+    custCard.addEventListener('click', function(e) {
+        // ஒருவேளை வீடியோ ஏற்கனவே ஓடி, யூசர் controls-ஐ (volume/seek) தொட்டால் pause ஆகக்கூடாது
+        if (e.target === custVideo && custVideo.controls) {
+            return;
+        }
+
+        if (custVideo.paused) {
+            // Unmute செய்து இயக்க முயற்சிக்கும், பிளாக் ஆனால் Muted ஆக இயங்கும்
+            const playPromise = custVideo.play();
+            if (playPromise !== undefined) {
+                playPromise
+                    .then(() => {
+                        custCard.classList.add('playing');
+                        custVideo.controls = true;
+                    })
+                    .catch(() => {
+                        custVideo.muted = true; // சத்தத்தை மியூட் செய்து இயக்கும்
+                        custVideo.play();
+                        custCard.classList.add('playing');
+                        custVideo.controls = true;
+                    });
+            }
+        } else {
+            custVideo.pause();
+            custCard.classList.remove('playing');
+            custVideo.controls = false;
+        }
+    });
+
+    custVideo.addEventListener('ended', function() {
+        custCard.classList.remove('playing');
+        custVideo.controls = false;
+        custVideo.load();
+    });
+}

@@ -74,8 +74,8 @@
             </span>
 
             <h1>
-                TURN UP THE
-                <span>SOUND.</span>
+                Your Moments. <br> <span>Our Music. 
+                One Unforgettable Night.</span>
             </h1>
 
             <p>
@@ -687,14 +687,22 @@
 
 <!-- ================= HAPPY CUSTOMERS ================= -->
 
-<section class="section customers">
+<section class="section customers" id="customers">
 
-    <div class="container customer-grid">
+    <div class="container-fluid customer-grid ggg">
 
-        <div class="customer-image">
+        <!-- Video Wrapper with Click to Play -->
+        <div class="customer-video-card" id="customerVideoCard">
 
-            <img src="images/happy-customer.jpg"
-                 alt="Happy customer at Twin Sparrow Events">
+            <video id="customerVideo" preload="metadata" playsinline>
+                <source src="images/dj.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <!-- Play / Pause Center Overlay -->
+            <div class="video-play-overlay">
+                <i class="bi bi-play-circle-fill"></i>
+            </div>
 
             <div class="customer-badge">
                 <i class="bi bi-heart-fill"></i>
